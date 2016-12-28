@@ -21,4 +21,4 @@ RUN chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
 VOLUME ["/youtrack/home/.youtrack", "/youtrack/db"]
 EXPOSE 8080
-CMD ["youtrack", "java" , "-Xmx1g", "-XX:MaxPermSize=250m", "-Ddatabase.location=/youtrack/db", "-Djava.awt.headless=true", "-Djetbrains.youtrack.disableBrowser=true", "-jar", "/youtrack/youtrack.jar", "8080"]
+CMD ["youtrack", "java" , "-Xmx1g", "-XX:MaxPermSize=250m","-Djava.security.egd=/dev/zrandom", "-Ddatabase.location=/youtrack/db", "-Djava.awt.headless=true", "-Djetbrains.youtrack.disableBrowser=true", "-jar", "/youtrack/youtrack.jar", "8080"]
